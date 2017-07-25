@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>淡然，灵动，洒脱</description>
-    <pubDate>Tue, 25 Jul 2017 15:14:35 GMT</pubDate>
+    <pubDate>Tue, 25 Jul 2017 15:29:07 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -18,11 +18,11 @@
       <pubDate>Tue, 25 Jul 2017 15:07:46 GMT</pubDate>
       <description>
       
-        &lt;p&gt;&lt;img src=&quot;/25/test/avatar.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2017/07/25/test/avatar.jpg&quot; alt=&quot;This is an example image&quot; title=&quot;This is an example
+        &lt;p&gt;&lt;img src=&quot;/25/test/avatar.jpg&quot; alt=&quot;logo&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2017/07/25/test/avatar.jpg&quot; alt=&quot;This is an example image&quot; title=&quot;This is an exa
       
       </description>
       
-      <content:encoded><![CDATA[<p><img src="/25/test/avatar.jpg" alt=""><br><img src="/2017/07/25/test/avatar.jpg" alt="This is an example image" title="This is an example image"></p>
+      <content:encoded><![CDATA[<p><img src="/25/test/avatar.jpg" alt="logo"><br><img src="/2017/07/25/test/avatar.jpg" alt="This is an example image" title="This is an example image"><br><img src="https://ws1.sinaimg.cn/large/006d3bmMly1fhwjsa7hxaj30ci08cgns.jpg" alt=""></p>
 ]]></content:encoded>
       
       <comments>gofee.me/2017/07/25/test/#disqus_thread</comments>
