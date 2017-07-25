@@ -8,11 +8,11 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Tue, 25 Jul 2017 12:31:45 GMT</pubDate>
+    <pubDate>Tue, 25 Jul 2017 12:47:59 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>AFNetworking-translate</title>
+      <title>AFNetworking README 中文版</title>
       <link>gofee.me/2017/01/25/AFNetworking-translate/</link>
       <guid>gofee.me/2017/01/25/AFNetworking-translate/</guid>
       <pubDate>Wed, 25 Jan 2017 12:23:15 GMT</pubDate>
