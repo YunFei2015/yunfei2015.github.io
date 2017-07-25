@@ -8,8 +8,26 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>淡然，灵动，洒脱</description>
-    <pubDate>Tue, 25 Jul 2017 12:47:59 GMT</pubDate>
+    <pubDate>Tue, 25 Jul 2017 15:10:38 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>test</title>
+      <link>gofee.me/2017/07/25/test/</link>
+      <guid>gofee.me/2017/07/25/test/</guid>
+      <pubDate>Tue, 25 Jul 2017 15:07:46 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;&lt;img src=&quot;/25/test/avatar.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p><img src="/25/test/avatar.jpg" alt=""></p>
+]]></content:encoded>
+      
+      <comments>gofee.me/2017/07/25/test/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>AFNetworking README 中文版</title>
