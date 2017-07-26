@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>灵动，洒脱，决然，坚韧</description>
-    <pubDate>Wed, 26 Jul 2017 03:02:39 GMT</pubDate>
+    <pubDate>Wed, 26 Jul 2017 03:05:06 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -18,11 +18,11 @@
       <pubDate>Tue, 25 Jul 2017 15:07:46 GMT</pubDate>
       <description>
       
-        &lt;img class=&quot;test/storyboard的加载过程.png&quot;&gt;
+        &lt;img class=&quot;storyboard的加载过程.png&quot;&gt;
       
       </description>
       
-      <content:encoded><![CDATA[<img class="test/storyboard的加载过程.png">]]></content:encoded>
+      <content:encoded><![CDATA[<img class="storyboard的加载过程.png">]]></content:encoded>
       
       <comments>gofee.me/2017/07/25/test/#disqus_thread</comments>
     </item>
