@@ -84,7 +84,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS,人脸识别," />
 
 
 
@@ -102,16 +102,21 @@
 
 
 
-<meta name="description" content="灵动，洒脱，决然，坚韧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Freya&#39;s blog">
-<meta property="og:url" content="gofee.me/tags/Interface-Build/index.html">
+<meta name="description" content="Face++由三位85后的清华师兄弟于2011年创建，先后获得联想之星的天使投资和创新工场的A轮投资。2013年底开始，先后在世界最权威的人脸检测(FDDB评测)、人脸关键点定位（300-W评测），和人脸识别(LFW评测)获得三个世界第一。这意味着在人脸技术三个最核心的技术模块，Face++都达到了世界最高水平。同时Face++所提供的技术云平台(Face++ 最好的免费人脸识别云服务)也是世界上">
+<meta name="keywords" content="iOS,人脸识别">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 Face++ 进行人脸搜索">
+<meta property="og:url" content="gofee.me/2016/11/22/face-recognition-01/index.html">
 <meta property="og:site_name" content="Freya&#39;s blog">
-<meta property="og:description" content="灵动，洒脱，决然，坚韧">
+<meta property="og:description" content="Face++由三位85后的清华师兄弟于2011年创建，先后获得联想之星的天使投资和创新工场的A轮投资。2013年底开始，先后在世界最权威的人脸检测(FDDB评测)、人脸关键点定位（300-W评测），和人脸识别(LFW评测)获得三个世界第一。这意味着在人脸技术三个最核心的技术模块，Face++都达到了世界最高水平。同时Face++所提供的技术云平台(Face++ 最好的免费人脸识别云服务)也是世界上">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="/2016/11/22/face-recognition-01/IMG_0093.JPG">
+<meta property="og:image" content="/2016/11/22/face-recognition-01/搜索示例.gif">
+<meta property="og:updated_time" content="2017-07-26T09:22:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Freya&#39;s blog">
-<meta name="twitter:description" content="灵动，洒脱，决然，坚韧">
+<meta name="twitter:title" content="使用 Face++ 进行人脸搜索">
+<meta name="twitter:description" content="Face++由三位85后的清华师兄弟于2011年创建，先后获得联想之星的天使投资和创新工场的A轮投资。2013年底开始，先后在世界最权威的人脸检测(FDDB评测)、人脸关键点定位（300-W评测），和人脸识别(LFW评测)获得三个世界第一。这意味着在人脸技术三个最核心的技术模块，Face++都达到了世界最高水平。同时Face++所提供的技术云平台(Face++ 最好的免费人脸识别云服务)也是世界上">
+<meta name="twitter:image" content="/2016/11/22/face-recognition-01/IMG_0093.JPG">
 
 
 
@@ -139,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="gofee.me/tags/Interface-Build/"/>
+  <link rel="canonical" href="gofee.me/2016/11/22/face-recognition-01/"/>
 
 
 
 
 
-  <title>标签: Interface Build | Freya's blog</title>
+  <title>使用 Face++ 进行人脸搜索 | Freya's blog</title>
   
 
 
@@ -170,7 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -298,44 +303,216 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>Interface Build<small>标签</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="gofee.me/2016/11/22/face-recognition-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Freya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freya's blog">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用 Face++ 进行人脸搜索</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-22T17:12:25+08:00">
+                2016-11-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/11/22/face-recognition-01/" class="leancloud_visitors" data-flag-title="使用 Face++ 进行人脸搜索">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>Face++由三位85后的清华师兄弟于2011年创建，先后获得联想之星的天使投资和创新工场的A轮投资。2013年底开始，先后在世界最权威的人脸检测(FDDB评测)、人脸关键点定位（300-W评测），和人脸识别(LFW评测)获得三个世界第一。这意味着在人脸技术三个最核心的技术模块，Face++都达到了世界最高水平。同时Face++所提供的技术云平台(Face++ 最好的免费人脸识别云服务)也是世界上最大的人脸技术平台，累计处理图片总数接近10亿规模，并为阿里，联想，360，世纪佳缘，美图秀秀，camera360等一批国内外著名互联网企业提供了技术服务。</p>
+<p>在今年6月份的WWDC主题演讲大会上，苹果介绍了一项全新的人脸识别功能。这项功能被添加在 iOS 10 的照片应用当中，会根据面部表情对照片进行分类。苹果软件工程高级副总裁克雷格·费德里奇在演讲中表示，“先进计算机视觉”（Advanced Computer Vision）是今年照片应用最大幅度的一次更新，因为苹果通过深度学习技术将人脸识别带到了 iPhone 身上。</p>
+<img src="/2016/11/22/face-recognition-01/IMG_0093.JPG" alt="photos" title="photos">
+<p>本文将介绍如何通过Face++来实现人脸搜索。</p>
+<img src="/2016/11/22/face-recognition-01/搜索示例.gif" alt="search demo" title="search demo">
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>1. 请到GitHub上下载SDK：<a href="https://github.com/FacePlusPlus/facepp-ios-sdk" target="_blank" rel="external">facepp-ios-sdk</a></p>
+<p>2. 解压后可以看到两个目录：FaceppSDK和FaceppSDK_ARC。顾名思义，FaceppSDK_ARC是在ARC环境下使用的，FaceppSDK是在MRC环境下使用的，本文着重介绍ARC环境的实现方法。</p>
+<p>3. 在Finder中，将FaceppSDK_ARC目录拖入工程目录下，将FaceppSDK_ARC添加至您的工程中;</p>
+<p>4. 在应用程序入口处添加以下代码：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"FaceppAPI.h"</span>`</span></div></pre></td></tr></table></figure>
+<p>在入口代码中添加如下代码:</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"FaceppAPI.h"</span></span></div><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</div><div class="line">	[FaceppAPI initWithApiKey: <span class="string">@"YOUR_KEY"</span> andApiSecret: <span class="string">@"YOUR_SECRET"</span>];</div><div class="line">	...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>5. 使用调试模式：</p>
+<p>开启调试模式之后，程序将向控制台输出所有http请求的url，以及返回json的原始数据，以供调试使用。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[FaceppAPI setDebugMode: <span class="literal">TRUE</span>];</div></pre></td></tr></table></figure>
+<p>###开始工作</p>
+<p>1. 使用<code>/detection/detect</code>接口来对图片进行检测，在获得数据以后其将返回一个FaceppResult结构</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FaceppResult *result = [[FaceppAPI detection] detectWithURL:<span class="literal">nil</span> </div><div class="line">                        imageData:[<span class="built_in">NSData</span> dataWithContentsOfFile:<span class="string">@"LOCAL_FILE_PATH"</span>]];</div></pre></td></tr></table></figure>
+<p>2. 从FaceppResult中获取结果</p>
+<p>获得第一张脸的face_id：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSString</span> *face_id = [result content][<span class="string">@"face"</span>][<span class="number">0</span>][<span class="string">@"face_id"</span>];</div></pre></td></tr></table></figure>
+<p>3. 对所有图片执行1~2步后，把每个图片对应的face_id存入数组，然后使用<code>/faceset/create</code>接口来创建faceset</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FaceppResult *setResult = [[FaceppAPI faceset] createWithFacesetName:<span class="literal">nil</span> andFaceId:_facesIds andTag:<span class="string">@"1"</span>];</div><div class="line"><span class="built_in">NSString</span> *faceset_id = [setResult content][<span class="string">@"faceset_id"</span>];</div></pre></td></tr></table></figure>
+<p>4. 针对search功能对一个faceset进行训练</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[FaceppAPI train] trainAsynchronouslyWithId:_faceset_id orName:<span class="literal">nil</span> andType:FaceppTrainSearch];</div></pre></td></tr></table></figure>
+<p>在一个faceset内进行search之前，必须先对该faceset进行Train。</p>
+<p>5. train成功后，针对某张图片的face_id进行搜索</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FaceppResult *searchResult = [[FaceppAPI recognition] searchWithKeyFaceId:face_id andFacesetId:_faceset_id orFacesetName:<span class="literal">nil</span>];</div></pre></td></tr></table></figure>
+<p>搜索到的相似图片的face_id都存储在<code>[searchResult content][@&quot;candidate&quot;]</code>里，以下为运行结果：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"> [FacePlusPlus]response JSON: </div><div class="line">&#123;</div><div class="line">    <span class="string">"candidate"</span>: [</div><div class="line">        &#123;</div><div class="line">            <span class="string">"face_id"</span>: <span class="string">"589bb6f9c7cd98a45c662a93f4607316"</span>, </div><div class="line">            <span class="string">"similarity"</span>: <span class="number">99.9909</span>, </div><div class="line">            <span class="string">"tag"</span>: <span class="string">""</span></div><div class="line">        &#125;, </div><div class="line">        &#123;</div><div class="line">            <span class="string">"face_id"</span>: <span class="string">"4aa39ac1c989ff1e597dafa8979446be"</span>, </div><div class="line">            <span class="string">"similarity"</span>: <span class="number">75.3242</span>, </div><div class="line">            <span class="string">"tag"</span>: <span class="string">""</span></div><div class="line">        &#125;, </div><div class="line">        &#123;</div><div class="line">            <span class="string">"face_id"</span>: <span class="string">"6ae11866cf062abb1908087b7467a03a"</span>, </div><div class="line">            <span class="string">"similarity"</span>: <span class="number">59.9056</span>, </div><div class="line">            <span class="string">"tag"</span>: <span class="string">""</span></div><div class="line">        &#125;</div><div class="line">    ], </div><div class="line">    <span class="string">"session_id"</span>: <span class="string">"e37308bb0e354c75b87fdf1de9b7e5c7"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/05/05/storyboard-loading/" itemprop="url">
-              
-                <span itemprop="name">关于storyboard不得不说的事</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-05T11:39:02+08:00"
-              content="2017-05-05" >
-          05-05
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/人脸识别/" rel="tag"># 人脸识别</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/31/vImage-translation-02/" rel="next" title="vImage学习笔记——卷积（Convolution）">
+                <i class="fa fa-chevron-left"></i> vImage学习笔记——卷积（Convolution）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/25/AFNetworking-translate/" rel="prev" title="AFNetworking README 中文版">
+                AFNetworking README 中文版 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -343,6 +520,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
 
         </div>
         
@@ -363,8 +546,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -444,6 +636,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -557,10 +765,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -586,6 +794,10 @@
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2138335"></script>
+      <!-- UY END -->
     
   
 
