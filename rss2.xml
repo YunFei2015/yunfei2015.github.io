@@ -8,8 +8,29 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>灵动，洒脱，决然，坚韧</description>
-    <pubDate>Wed, 26 Jul 2017 03:22:12 GMT</pubDate>
+    <pubDate>Wed, 26 Jul 2017 05:09:14 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>关于storyboard不得不说的事</title>
+      <link>gofee.me/2017/07/26/storyboard-loading/</link>
+      <guid>gofee.me/2017/07/26/storyboard-loading/</guid>
+      <pubDate>Wed, 26 Jul 2017 03:39:02 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;自 iOS 5 时代苹果推出 Storyboard（以下简称SB）以来，关于使用代码手写 UI、SB 和 xib 之间的争论就一直存在。问题主要在于 Storyboard 的加载过程是否会影响性能，下面就分析一下 Storyboard 中的 ViewController 是
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>自 iOS 5 时代苹果推出 Storyboard（以下简称SB）以来，关于使用代码手写 UI、SB 和 xib 之间的争论就一直存在。问题主要在于 Storyboard 的加载过程是否会影响性能，下面就分析一下 Storyboard 中的 ViewController 是怎么加载出来的。</p>
+<p>细心的同学会发现，在编译的时候 Xcode 有个 Compiling Storyboard files 的过程。编译过程中，项目里用到的 SB 文件也会被编译，并以 <code>.storyboarc</code> 为扩展名最终保存在 APP 包内。<code>.storyboardc</code> 是一个文件夹，里面保存了描述编译后的 SB 信息的 <code>Info.plist</code> 文件，以及一系列 <code>.nib</code> 文件。原来的 SB 中的每个对象（也就是每个 ViewController）将会被编译成一个单独的 <code>.nib</code>，<code>.nib</code> 中包含了编码后的对应的对象层级。在加载一个 SB，并从中读取 ViewController 类型和 nib 的关系，来完成 <code>UIStoryboard</code> 的初始化。接下来读取某个 nib，并使用<code>UINibDecoder</code> 进行解码，将 nib 二进制还原为实际的对象，最后调用该对象的 <code>initWithCoder：</code> 完成各个属性的解码。最后，调用 <code>awakeFromNib</code> 方法，来通知开发者从 nib 的加载已经完毕。</p>
+<img src="/2017/07/26/storyboard-loading/storyboard的加载过程.png" alt="Storyboard 的加载过程" title="Storyboard 的加载过程">
+<p>可以看出，从只有一个 ViewController 的 SB 中加载这个 VC，与从有多个 ViewController 的 SB 中加载的情况，速度上并不会有什么区别。</p>
+<p>原文： <a href="https://onevcat.com/2017/04/storyboard-argue/" target="_blank" rel="external">再看关于 Storyboard 的一些争论</a></p>
+]]></content:encoded>
+      
+      <comments>gofee.me/2017/07/26/storyboard-loading/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>AFNetworking README 中文版</title>

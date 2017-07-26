@@ -84,12 +84,10 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS,Interface Build," />
 
 
 
-
-  
 
 
   <link rel="alternate" href="/rss2.xml" title="Freya's blog" type="application/atom+xml" />
@@ -104,17 +102,20 @@
 
 
 
-<meta name="description" content="灵动，洒脱，决然，坚韧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="gofee.me/categories/index.html">
+<meta name="description" content="自 iOS 5 时代苹果推出 Storyboard（以下简称SB）以来，关于使用代码手写 UI、SB 和 xib 之间的争论就一直存在。问题主要在于 Storyboard 的加载过程是否会影响性能，下面就分析一下 Storyboard 中的 ViewController 是怎么加载出来的。 细心的同学会发现，在编译的时候 Xcode 有个 Compiling Storyboard files 的过">
+<meta name="keywords" content="iOS,Interface Build">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于storyboard不得不说的事">
+<meta property="og:url" content="gofee.me/2017/07/26/storyboard-loading/index.html">
 <meta property="og:site_name" content="Freya&#39;s blog">
-<meta property="og:description" content="灵动，洒脱，决然，坚韧">
+<meta property="og:description" content="自 iOS 5 时代苹果推出 Storyboard（以下简称SB）以来，关于使用代码手写 UI、SB 和 xib 之间的争论就一直存在。问题主要在于 Storyboard 的加载过程是否会影响性能，下面就分析一下 Storyboard 中的 ViewController 是怎么加载出来的。 细心的同学会发现，在编译的时候 Xcode 有个 Compiling Storyboard files 的过">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-25T10:45:07.000Z">
+<meta property="og:image" content="/2017/07/26/storyboard-loading/storyboard的加载过程.png">
+<meta property="og:updated_time" content="2017-07-26T05:09:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="灵动，洒脱，决然，坚韧">
+<meta name="twitter:title" content="关于storyboard不得不说的事">
+<meta name="twitter:description" content="自 iOS 5 时代苹果推出 Storyboard（以下简称SB）以来，关于使用代码手写 UI、SB 和 xib 之间的争论就一直存在。问题主要在于 Storyboard 的加载过程是否会影响性能，下面就分析一下 Storyboard 中的 ViewController 是怎么加载出来的。 细心的同学会发现，在编译的时候 Xcode 有个 Compiling Storyboard files 的过">
+<meta name="twitter:image" content="/2017/07/26/storyboard-loading/storyboard的加载过程.png">
 
 
 
@@ -142,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="gofee.me/categories/"/>
+  <link rel="canonical" href="gofee.me/2017/07/26/storyboard-loading/"/>
 
 
 
 
 
-  <title>categories | Freya's blog</title>
+  <title>关于storyboard不得不说的事 | Freya's blog</title>
   
 
 
@@ -302,25 +303,206 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="gofee.me/2017/07/26/storyboard-loading/">
 
-</header>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Freya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freya's blog">
+    </span>
 
     
-    
-      <div class="category-all-page">
-        <div class="category-all-title">
-            目前共计 2 个分类
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">关于storyboard不得不说的事</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-26T11:39:02+08:00">
+                2017-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/26/storyboard-loading/" class="leancloud_visitors" data-flag-title="关于storyboard不得不说的事">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
         </div>
-        <div class="category-all">
-          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/iOS开发/">iOS开发</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/第三方库/">第三方库</a><span class="category-list-count">1</span></li></ul>
-        </div>
-      </div>
+      </header>
     
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>自 iOS 5 时代苹果推出 Storyboard（以下简称SB）以来，关于使用代码手写 UI、SB 和 xib 之间的争论就一直存在。问题主要在于 Storyboard 的加载过程是否会影响性能，下面就分析一下 Storyboard 中的 ViewController 是怎么加载出来的。</p>
+<p>细心的同学会发现，在编译的时候 Xcode 有个 Compiling Storyboard files 的过程。编译过程中，项目里用到的 SB 文件也会被编译，并以 <code>.storyboarc</code> 为扩展名最终保存在 APP 包内。<code>.storyboardc</code> 是一个文件夹，里面保存了描述编译后的 SB 信息的 <code>Info.plist</code> 文件，以及一系列 <code>.nib</code> 文件。原来的 SB 中的每个对象（也就是每个 ViewController）将会被编译成一个单独的 <code>.nib</code>，<code>.nib</code> 中包含了编码后的对应的对象层级。在加载一个 SB，并从中读取 ViewController 类型和 nib 的关系，来完成 <code>UIStoryboard</code> 的初始化。接下来读取某个 nib，并使用<code>UINibDecoder</code> 进行解码，将 nib 二进制还原为实际的对象，最后调用该对象的 <code>initWithCoder：</code> 完成各个属性的解码。最后，调用 <code>awakeFromNib</code> 方法，来通知开发者从 nib 的加载已经完毕。</p>
+<img src="/2017/07/26/storyboard-loading/storyboard的加载过程.png" alt="Storyboard 的加载过程" title="Storyboard 的加载过程">
+<p>可以看出，从只有一个 ViewController 的 SB 中加载这个 VC，与从有多个 ViewController 的 SB 中加载的情况，速度上并不会有什么区别。</p>
+<p>原文： <a href="https://onevcat.com/2017/04/storyboard-argue/" target="_blank" rel="external">再看关于 Storyboard 的一些争论</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/Wechat.jpg" alt="Freya WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Freya Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/Interface-Build/" rel="tag"># Interface Build</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/25/AFNetworking-translate/" rel="next" title="AFNetworking README 中文版">
+                <i class="fa fa-chevron-left"></i> AFNetworking README 中文版
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -549,10 +731,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
