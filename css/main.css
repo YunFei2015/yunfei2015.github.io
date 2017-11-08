@@ -485,12 +485,12 @@ code {
   font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
 }
 code {
-  padding: 2px 4px;
+  padding: 2px 6px;
   word-wrap: break-word;
-  color: #555;
-  background: #eee;
+  color: #c82829;
+  background: #f9f2f4;
   border-radius: 3px;
-  font-size: 13px;
+  font-size: 14px;
 }
 pre code {
   padding: 0;
@@ -1095,6 +1095,14 @@ pre .javascript .function {
     word-break: break-word;
   }
 }
+.post-body p a {
+  color: #0593d3;
+  border-bottom: none;
+}
+.post-body p a:hover {
+  color: #0477ab;
+  text-decoration: underline;
+}
 .post-body .fancybox img {
   display: block !important;
   margin: 0 auto;
@@ -1677,7 +1685,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2a53ff;
+  background: #a18bff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2650,7 +2658,7 @@ hr {
   background: #222;
 }
 .posts-expand .post-body img {
-  margin: 0;
+  margin: auto;
 }
 .posts-expand .post-tags {
   text-align: left;
