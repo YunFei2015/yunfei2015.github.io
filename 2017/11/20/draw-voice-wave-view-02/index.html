@@ -84,7 +84,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Mac 开发,动画,绘图," />
 
 
 
@@ -102,16 +102,20 @@
 
 
 
-<meta name="description" content="灵动，洒脱，决然，坚韧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Freya&#39;s blog">
-<meta property="og:url" content="gofee.me/archives/2017/11/index.html">
+<meta name="description" content="开篇播放音频的效果图：  需求分析 灰色波形底图 播放过程，白色波形覆盖  实现思路灰色波形底图是固定的，可直接用图层绘制 1、波形的路径计算与上篇类似 //波形路径- (CGPathRef)pathWithPoints:(NSArray *)points&amp;#123;    CGFloat midY = NSHeight(self.bounds) / 2.f;    CGFloat leftX =">
+<meta name="keywords" content="Mac 开发,动画,绘图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac 音频波形图——播放">
+<meta property="og:url" content="gofee.me/2017/11/20/draw-voice-wave-view-02/index.html">
 <meta property="og:site_name" content="Freya&#39;s blog">
-<meta property="og:description" content="灵动，洒脱，决然，坚韧">
+<meta property="og:description" content="开篇播放音频的效果图：  需求分析 灰色波形底图 播放过程，白色波形覆盖  实现思路灰色波形底图是固定的，可直接用图层绘制 1、波形的路径计算与上篇类似 //波形路径- (CGPathRef)pathWithPoints:(NSArray *)points&amp;#123;    CGFloat midY = NSHeight(self.bounds) / 2.f;    CGFloat leftX =">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="/2017/11/20/draw-voice-wave-view-02/playVoice.gif">
+<meta property="og:updated_time" content="2017-12-17T14:06:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Freya&#39;s blog">
-<meta name="twitter:description" content="灵动，洒脱，决然，坚韧">
+<meta name="twitter:title" content="Mac 音频波形图——播放">
+<meta name="twitter:description" content="开篇播放音频的效果图：  需求分析 灰色波形底图 播放过程，白色波形覆盖  实现思路灰色波形底图是固定的，可直接用图层绘制 1、波形的路径计算与上篇类似 //波形路径- (CGPathRef)pathWithPoints:(NSArray *)points&amp;#123;    CGFloat midY = NSHeight(self.bounds) / 2.f;    CGFloat leftX =">
+<meta name="twitter:image" content="/2017/11/20/draw-voice-wave-view-02/playVoice.gif">
 
 
 
@@ -139,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="gofee.me/archives/2017/11/"/>
+  <link rel="canonical" href="gofee.me/2017/11/20/draw-voice-wave-view-02/"/>
 
 
 
 
 
-  <title>归档 | Freya's blog</title>
+  <title>Mac 音频波形图——播放 | Freya's blog</title>
   
 
 
@@ -170,7 +174,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -298,103 +302,203 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 8 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/20/draw-voice-wave-view-02/" itemprop="url">
-              
-                <span itemprop="name">Mac 音频波形图——播放</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-20T17:55:34+08:00"
-              content="2017-11-20" >
-          11-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/08/draw-voice-wave-view/" itemprop="url">
-              
-                <span itemprop="name">Mac 录制音频，波形图的绘制</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-08T22:05:34+08:00"
-              content="2017-11-08" >
-          11-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="gofee.me/2017/11/20/draw-voice-wave-view-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Freya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freya's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Mac 音频波形图——播放</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T17:55:34+08:00">
+                2017-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Mac开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/11/20/draw-voice-wave-view-02/" class="leancloud_visitors" data-flag-title="Mac 音频波形图——播放">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="开篇"><a href="#开篇" class="headerlink" title="开篇"></a>开篇</h3><p>播放音频的效果图：</p>
+<img src="/2017/11/20/draw-voice-wave-view-02/playVoice.gif" alt="效果图" title="效果图">
+<h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><ol>
+<li>灰色波形底图</li>
+<li>播放过程，白色波形覆盖</li>
+</ol>
+<h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><p>灰色波形底图是固定的，可直接用图层绘制</p>
+<p>1、波形的路径计算与上篇类似</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="comment">//波形路径</span></div><div class="line">- (<span class="built_in">CGPathRef</span>)pathWithPoints:(<span class="built_in">NSArray</span> *)points&#123;</div><div class="line">    <span class="built_in">CGFloat</span> midY = <span class="built_in">NSHeight</span>(<span class="keyword">self</span>.bounds) / <span class="number">2.</span>f;</div><div class="line">    <span class="built_in">CGFloat</span> leftX = <span class="built_in">NSMaxX</span>(playBtnRect);</div><div class="line">    </div><div class="line">    <span class="built_in">CGMutablePathRef</span> wavePath = <span class="built_in">CGPathCreateMutable</span>();                 <span class="comment">//绘制路径</span></div><div class="line">    <span class="built_in">CGPathMoveToPoint</span>(wavePath, <span class="literal">nil</span>, leftX, midY);</div><div class="line">    <span class="keyword">for</span> (<span class="built_in">NSInteger</span> i = <span class="number">0</span>; i &lt; _pointArray.count; i++) &#123;</div><div class="line">        <span class="built_in">NSValue</span> *pointValue = _pointArray[i];</div><div class="line">        <span class="built_in">NSPoint</span> point = pointValue.pointValue;</div><div class="line">        <span class="keyword">if</span> (point.y == <span class="number">0</span>) &#123;</div><div class="line">            <span class="built_in">CGPathMoveToPoint</span>(wavePath, <span class="literal">nil</span>, leftX + i - <span class="number">1</span>, midY);</div><div class="line">            <span class="built_in">CGPathAddLineToPoint</span>(wavePath, <span class="literal">NULL</span>, leftX + i, midY);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="built_in">CGPathMoveToPoint</span>(wavePath, <span class="literal">nil</span>, leftX + i, midY);</div><div class="line">            <span class="built_in">CGPathAddLineToPoint</span>(wavePath, <span class="literal">NULL</span>, leftX + i, midY + point.y);</div><div class="line">            <span class="built_in">CGPathMoveToPoint</span>(wavePath, <span class="literal">nil</span>, leftX + i, midY);</div><div class="line">            <span class="built_in">CGPathAddLineToPoint</span>(wavePath, <span class="literal">NULL</span>, leftX + i, midY - point.y);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">CGPathRef</span> path = <span class="built_in">CGPathCreateCopy</span>(wavePath);</div><div class="line">    <span class="built_in">CGPathRelease</span>(wavePath);</div><div class="line">    <span class="keyword">return</span> path;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>绘制灰色波形</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="comment">//添加完整波形图层</span></div><div class="line">- (<span class="keyword">void</span>)addWaveLayerWithPath:(<span class="built_in">CGPathRef</span>)wavePath&#123;</div><div class="line">    <span class="built_in">CAShapeLayer</span> *shapeLayer = [<span class="built_in">CAShapeLayer</span> layer];</div><div class="line">    shapeLayer.lineWidth=<span class="number">1</span>;</div><div class="line">    shapeLayer.strokeColor=[<span class="built_in">NSColor</span> lightGrayColor].CGColor;</div><div class="line">    shapeLayer.lineCap = kCALineCapRound;</div><div class="line">    shapeLayer.lineJoin = kCALineJoinRound;</div><div class="line">    [<span class="keyword">self</span>.layer addSublayer:shapeLayer];</div><div class="line">    shapeLayer.path = wavePath;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>2、播放图层，使用CAShapeLayer实现，CAShapeLayer是唯一一个可动画效果的图层了</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="comment">//添加播放动画图层</span></div><div class="line">- (<span class="keyword">void</span>)addAnimationLayerWithPath:(<span class="built_in">CGPathRef</span>)path&#123;</div><div class="line">    animationLayer = [<span class="built_in">CAShapeLayer</span> layer];</div><div class="line">    animationLayer.path = path;</div><div class="line">    animationLayer.lineWidth = <span class="number">1</span>;</div><div class="line">    animationLayer.strokeColor=[<span class="built_in">NSColor</span> whiteColor].CGColor;</div><div class="line">    animationLayer.lineCap = kCALineCapRound;</div><div class="line">    animationLayer.lineJoin = kCALineJoinRound;</div><div class="line">    [<span class="keyword">self</span>.layer addSublayer:animationLayer];</div><div class="line">    </div><div class="line">    animationLayer.speed = <span class="number">0</span>;   <span class="comment">//禁止动画执行</span></div><div class="line">    animation = [<span class="built_in">CABasicAnimation</span> animationWithKeyPath:<span class="string">@"strokeEnd"</span>];</div><div class="line">    animation.duration = _playDuration;</div><div class="line">    animation.fromValue = @(<span class="number">0.0</span>f);</div><div class="line">    animation.toValue = @(<span class="number">1.0</span>f);</div><div class="line">    animation.delegate = <span class="keyword">self</span>;</div><div class="line">    [animationLayer addAnimation:animation forKey:<span class="string">@""</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>animationLayer.speed</code>设为0，即动画速度为0，也就是不执行。</p>
+<p><code>@&quot;strokeEnd&quot;</code>是路径的结束点，始于0，止于1，当动画开始执行，就能看到绘制过程了。</p>
+<p>3、播放的开始、暂停、继续、停止</p>
+<p>对动画的控制，主要是对<code>speed</code> 、<code>timeOffset</code>、<code>beginTime</code>等属性的设置。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)play&#123;</div><div class="line">    [<span class="keyword">self</span> resume];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)pause&#123;</div><div class="line">    _playing = <span class="literal">NO</span>;</div><div class="line">    [<span class="keyword">self</span> setNeedsDisplay:<span class="literal">YES</span>];</div><div class="line">    </div><div class="line">    <span class="built_in">CFTimeInterval</span> pausedTime = [animationLayer convertTime:<span class="built_in">CACurrentMediaTime</span>() fromLayer:<span class="literal">nil</span>];</div><div class="line">    animationLayer.speed = <span class="number">0</span>;</div><div class="line">    animationLayer.timeOffset = pausedTime;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)resume&#123;</div><div class="line">    _playing = <span class="literal">YES</span>;</div><div class="line">    [<span class="keyword">self</span> setNeedsDisplay:<span class="literal">YES</span>];</div><div class="line">    </div><div class="line">    <span class="built_in">CFTimeInterval</span> pausedTime = [animationLayer timeOffset];</div><div class="line">    animationLayer.speed = <span class="number">1.0</span>;</div><div class="line">    animationLayer.timeOffset = <span class="number">0.0</span>;</div><div class="line">    animationLayer.beginTime = <span class="number">0</span>;</div><div class="line">    <span class="built_in">CFTimeInterval</span> timeSincePause = [animationLayer convertTime:<span class="built_in">CACurrentMediaTime</span>() fromLayer:<span class="literal">nil</span>] - pausedTime;</div><div class="line">    animationLayer.beginTime = timeSincePause;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)stop&#123;</div><div class="line">    _playing = <span class="literal">NO</span>;</div><div class="line">    [<span class="keyword">self</span> setNeedsDisplay:<span class="literal">YES</span>];</div><div class="line"></div><div class="line">    animationLayer.timeOffset = <span class="number">0</span>;</div><div class="line">    animationLayer.speed = <span class="number">0</span>;</div><div class="line">    </div><div class="line">    <span class="comment">//动画播放完成后，默认自动removed</span></div><div class="line">    [animationLayer addAnimation:animation forKey:<span class="string">@""</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Demo 地址：<a href="https://github.com/YunFei2015/AudioWaveAnimation.git" target="_blank" rel="external">https://github.com/YunFei2015/AudioWaveAnimation.git</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mac-开发/" rel="tag"># Mac 开发</a>
+          
+            <a href="/tags/动画/" rel="tag"># 动画</a>
+          
+            <a href="/tags/绘图/" rel="tag"># 绘图</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/08/draw-voice-wave-view/" rel="next" title="Mac 录制音频，波形图的绘制">
+                <i class="fa fa-chevron-left"></i> Mac 录制音频，波形图的绘制
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -402,6 +506,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
 
         </div>
         
@@ -422,8 +532,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -503,6 +622,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#开篇"><span class="nav-number">1.</span> <span class="nav-text">开篇</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求分析"><span class="nav-number">2.</span> <span class="nav-text">需求分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现思路"><span class="nav-number">3.</span> <span class="nav-text">实现思路</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -616,11 +751,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
@@ -647,6 +780,10 @@
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2138335"></script>
+      <!-- UY END -->
     
   
 

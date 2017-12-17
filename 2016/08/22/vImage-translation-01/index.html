@@ -439,7 +439,7 @@
 </ul>
 <h2 id="二、vImage练习"><a href="#二、vImage练习" class="headerlink" title="二、vImage练习"></a>二、vImage练习</h2><h3 id="Loading-Image-Data"><a href="#Loading-Image-Data" class="headerlink" title="Loading Image Data"></a>Loading Image Data</h3><p>要将vImage集成到你的应用中，首先要把raw图像数据加载到内存。可以使用Image I/O框架把任何主流的图像文件（JPG、PNG、GIF等）加载到C类型缓冲池中（void *arrays）。</p>
 <p>以下是从本地文件提取raw图像数据的例子：</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSURL</span>* url = [<span class="built_in">NSURL</span> fileURLWithPath:filename];</div><div class="line"><span class="comment">//Create the image source with the options left null for now</span></div><div class="line"><span class="comment">//Keep in mind since we created it, we're responsible for getting rid of it</span></div><div class="line"><span class="built_in">CGImageSourceRef</span> image_source = <span class="built_in">CGImageSourceCreateWithURL</span>( (<span class="built_in">CFURLRef</span>)url, <span class="literal">NULL</span>);</div><div class="line"><span class="keyword">if</span>(image_source == <span class="literal">NULL</span>)</div><div class="line">&#123;</div><div class="line">    <span class="comment">//Something went wrong</span></div><div class="line">    fprintf(stderr, <span class="string">"VImage error: Couldn't create image source from URL\n"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//Now that we got the source, let's create an image from the first image in the CGImageSource</span></div><div class="line"><span class="built_in">CGImageRef</span> image = <span class="built_in">CGImageSourceCreateImageAtIndex</span>(image_source, <span class="number">0</span>, <span class="literal">NULL</span>);</div><div class="line"> </div><div class="line"><span class="comment">//We created our image, and that's all we needed the source for, so let's release it</span></div><div class="line"><span class="built_in">CFRelease</span>(image_source);</div><div class="line"> </div><div class="line"><span class="keyword">if</span>(image == <span class="literal">NULL</span>)</div><div class="line">&#123;</div><div class="line">    <span class="comment">//something went wrong</span></div><div class="line">    fprintf(stderr, <span class="string">"VImage error: Couldn't create image source from URL\n"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="built_in">NSURL</span>* url = [<span class="built_in">NSURL</span> fileURLWithPath:filename];</div><div class="line"><span class="comment">//Create the image source with the options left null for now</span></div><div class="line"><span class="comment">//Keep in mind since we created it, we're responsible for getting rid of it</span></div><div class="line"><span class="built_in">CGImageSourceRef</span> image_source = <span class="built_in">CGImageSourceCreateWithURL</span>( (<span class="built_in">CFURLRef</span>)url, <span class="literal">NULL</span>);</div><div class="line"><span class="keyword">if</span>(image_source == <span class="literal">NULL</span>)</div><div class="line">&#123;</div><div class="line">    <span class="comment">//Something went wrong</span></div><div class="line">    fprintf(stderr, <span class="string">"VImage error: Couldn't create image source from URL\n"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//Now that we got the source, let's create an image from the first image in the CGImageSource</span></div><div class="line"><span class="built_in">CGImageRef</span> image = <span class="built_in">CGImageSourceCreateImageAtIndex</span>(image_source, <span class="number">0</span>, <span class="literal">NULL</span>);</div><div class="line"> </div><div class="line"><span class="comment">//We created our image, and that's all we needed the source for, so let's release it</span></div><div class="line"><span class="built_in">CFRelease</span>(image_source);</div><div class="line"> </div><div class="line"><span class="keyword">if</span>(image == <span class="literal">NULL</span>)</div><div class="line">&#123;</div><div class="line">    <span class="comment">//something went wrong</span></div><div class="line">    fprintf(stderr, <span class="string">"VImage error: Couldn't create image source from URL\n"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>把图像加载到内存之后，就可以通过vImage函数进行各种处理了。请密切注意函数下划线之后的字符，那代表了像素数据的格式。vImage函数既可以在源缓冲区中直接处理，也可以在提供的目标缓冲区中处理。</p>
 <p>由于vImage只负责处理图像，你还需要想办法把图像显示出来。根据你的应用开发环境（Carbon or Cocoa），你需要找到一个方法（例如Quartz）去显示合成后的像素数据，或将图像数据存储到磁盘（Image I/O）。</p>
 <h4 id="使用二维图像格式"><a href="#使用二维图像格式" class="headerlink" title="使用二维图像格式"></a>使用二维图像格式</h4><p>大多数vImage函数是从四种图像格式开始的。二维图像每次编码一个通道（先存储所有的红色通道数据，然后是绿色，蓝色，alpha），而交叉图像在内存是混合存储所有通道的。</p>
@@ -609,7 +609,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -620,7 +620,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -631,7 +631,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

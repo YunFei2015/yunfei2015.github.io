@@ -419,27 +419,27 @@
 <p>2. 解压后可以看到两个目录：FaceppSDK和FaceppSDK_ARC。顾名思义，FaceppSDK_ARC是在ARC环境下使用的，FaceppSDK是在MRC环境下使用的，本文着重介绍ARC环境的实现方法。</p>
 <p>3. 在Finder中，将FaceppSDK_ARC目录拖入工程目录下，将FaceppSDK_ARC添加至您的工程中;</p>
 <p>4. 在应用程序入口处添加以下代码：</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"FaceppAPI.h"</span>`</span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"FaceppAPI.h"</span>`</span></div></pre></td></tr></table></figure>
 <p>在入口代码中添加如下代码:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"FaceppAPI.h"</span></span></div><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</div><div class="line">	[FaceppAPI initWithApiKey: <span class="string">@"YOUR_KEY"</span> andApiSecret: <span class="string">@"YOUR_SECRET"</span>];</div><div class="line">	...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"FaceppAPI.h"</span></span></div><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</div><div class="line">	[FaceppAPI initWithApiKey: <span class="string">@"YOUR_KEY"</span> andApiSecret: <span class="string">@"YOUR_SECRET"</span>];</div><div class="line">	...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>5. 使用调试模式：</p>
 <p>开启调试模式之后，程序将向控制台输出所有http请求的url，以及返回json的原始数据，以供调试使用。</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[FaceppAPI setDebugMode: <span class="literal">TRUE</span>];</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">[FaceppAPI setDebugMode: <span class="literal">TRUE</span>];</div></pre></td></tr></table></figure>
 <p>###开始工作</p>
 <p>1. 使用<code>/detection/detect</code>接口来对图片进行检测，在获得数据以后其将返回一个FaceppResult结构</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FaceppResult *result = [[FaceppAPI detection] detectWithURL:<span class="literal">nil</span> </div><div class="line">                        imageData:[<span class="built_in">NSData</span> dataWithContentsOfFile:<span class="string">@"LOCAL_FILE_PATH"</span>]];</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">FaceppResult *result = [[FaceppAPI detection] detectWithURL:<span class="literal">nil</span> </div><div class="line">                        imageData:[<span class="built_in">NSData</span> dataWithContentsOfFile:<span class="string">@"LOCAL_FILE_PATH"</span>]];</div></pre></td></tr></table></figure>
 <p>2. 从FaceppResult中获取结果</p>
 <p>获得第一张脸的face_id：</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSString</span> *face_id = [result content][<span class="string">@"face"</span>][<span class="number">0</span>][<span class="string">@"face_id"</span>];</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="built_in">NSString</span> *face_id = [result content][<span class="string">@"face"</span>][<span class="number">0</span>][<span class="string">@"face_id"</span>];</div></pre></td></tr></table></figure>
 <p>3. 对所有图片执行1~2步后，把每个图片对应的face_id存入数组，然后使用<code>/faceset/create</code>接口来创建faceset</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FaceppResult *setResult = [[FaceppAPI faceset] createWithFacesetName:<span class="literal">nil</span> andFaceId:_facesIds andTag:<span class="string">@"1"</span>];</div><div class="line"><span class="built_in">NSString</span> *faceset_id = [setResult content][<span class="string">@"faceset_id"</span>];</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">FaceppResult *setResult = [[FaceppAPI faceset] createWithFacesetName:<span class="literal">nil</span> andFaceId:_facesIds andTag:<span class="string">@"1"</span>];</div><div class="line"><span class="built_in">NSString</span> *faceset_id = [setResult content][<span class="string">@"faceset_id"</span>];</div></pre></td></tr></table></figure>
 <p>4. 针对search功能对一个faceset进行训练</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[FaceppAPI train] trainAsynchronouslyWithId:_faceset_id orName:<span class="literal">nil</span> andType:FaceppTrainSearch];</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">[[FaceppAPI train] trainAsynchronouslyWithId:_faceset_id orName:<span class="literal">nil</span> andType:FaceppTrainSearch];</div></pre></td></tr></table></figure>
 <p>在一个faceset内进行search之前，必须先对该faceset进行Train。</p>
 <p>5. train成功后，针对某张图片的face_id进行搜索</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FaceppResult *searchResult = [[FaceppAPI recognition] searchWithKeyFaceId:face_id andFacesetId:_faceset_id orFacesetName:<span class="literal">nil</span>];</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">FaceppResult *searchResult = [[FaceppAPI recognition] searchWithKeyFaceId:face_id andFacesetId:_faceset_id orFacesetName:<span class="literal">nil</span>];</div></pre></td></tr></table></figure>
 <p>搜索到的相似图片的face_id都存储在<code>[searchResult content][@&quot;candidate&quot;]</code>里，以下为运行结果：</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"> [FacePlusPlus]response JSON: </div><div class="line">&#123;</div><div class="line">    <span class="string">"candidate"</span>: [</div><div class="line">        &#123;</div><div class="line">            <span class="string">"face_id"</span>: <span class="string">"589bb6f9c7cd98a45c662a93f4607316"</span>, </div><div class="line">            <span class="string">"similarity"</span>: <span class="number">99.9909</span>, </div><div class="line">            <span class="string">"tag"</span>: <span class="string">""</span></div><div class="line">        &#125;, </div><div class="line">        &#123;</div><div class="line">            <span class="string">"face_id"</span>: <span class="string">"4aa39ac1c989ff1e597dafa8979446be"</span>, </div><div class="line">            <span class="string">"similarity"</span>: <span class="number">75.3242</span>, </div><div class="line">            <span class="string">"tag"</span>: <span class="string">""</span></div><div class="line">        &#125;, </div><div class="line">        &#123;</div><div class="line">            <span class="string">"face_id"</span>: <span class="string">"6ae11866cf062abb1908087b7467a03a"</span>, </div><div class="line">            <span class="string">"similarity"</span>: <span class="number">59.9056</span>, </div><div class="line">            <span class="string">"tag"</span>: <span class="string">""</span></div><div class="line">        &#125;</div><div class="line">    ], </div><div class="line">    <span class="string">"session_id"</span>: <span class="string">"e37308bb0e354c75b87fdf1de9b7e5c7"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"> [FacePlusPlus]response JSON: </div><div class="line">&#123;</div><div class="line">    <span class="string">"candidate"</span>: [</div><div class="line">        &#123;</div><div class="line">            <span class="string">"face_id"</span>: <span class="string">"589bb6f9c7cd98a45c662a93f4607316"</span>, </div><div class="line">            <span class="string">"similarity"</span>: <span class="number">99.9909</span>, </div><div class="line">            <span class="string">"tag"</span>: <span class="string">""</span></div><div class="line">        &#125;, </div><div class="line">        &#123;</div><div class="line">            <span class="string">"face_id"</span>: <span class="string">"4aa39ac1c989ff1e597dafa8979446be"</span>, </div><div class="line">            <span class="string">"similarity"</span>: <span class="number">75.3242</span>, </div><div class="line">            <span class="string">"tag"</span>: <span class="string">""</span></div><div class="line">        &#125;, </div><div class="line">        &#123;</div><div class="line">            <span class="string">"face_id"</span>: <span class="string">"6ae11866cf062abb1908087b7467a03a"</span>, </div><div class="line">            <span class="string">"similarity"</span>: <span class="number">59.9056</span>, </div><div class="line">            <span class="string">"tag"</span>: <span class="string">""</span></div><div class="line">        &#125;</div><div class="line">    ], </div><div class="line">    <span class="string">"session_id"</span>: <span class="string">"e37308bb0e354c75b87fdf1de9b7e5c7"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -571,7 +571,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -582,7 +582,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -593,7 +593,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
